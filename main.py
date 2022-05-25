@@ -1,19 +1,34 @@
-from matplotlib import pyplot as plt
-plt.plot([1,2,3],[4,5,6], "g--") # o primeiro parametro recebe o eixo X e o segundo eixo Y. O terceiro argumento é a cor e o tipo de linha
-                     # ..."--", color="#03fc24") assim é possivel alterara a cor da linha e o estilo
-                     # ..."--", color="cor", lw = 5) Espessura da linha - LW = linewidth 
-# USANDO DIFERENTES ESTILOS PARA O TITULO DO GRÁFICO #
-#plt.title("Usando Python")
-plt.title("Titulo esquerda", fontdict={'family': 'serif', 'color': 'darkblue' , 'weight': 'bold', 'size': 16},loc='left')
-plt.title("Titulo central", fontdict={'family': 'monospace', 'color': 'red' , 'weight': 'bold', 'size': 16},loc='center')
-plt.title("Titulo direita", fontdict={'family': 'fantasy', 'color': 'black' , 'weight': 'bold', 'size': 16},loc='right')
+# Importando Tkinter - pip install tk
+from tkinter import *
+from tkinter import ttk
 
-# ADICIONANDO NOME AOS EIXOS X e Y #
+# Importando dependencia para o Matplotlib - pip install matplotlib e pip install pandas
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import matplotlib.pyplot as plt
+from matplotlib.figure import Figure
 
-# plt.xlabel('Valores do eixo X')
-# plt.ylabel('Valores do eixo Y')
-# Ou 
-plt.xlabel("Valores do eixo X", family='serif', color='r', weight='normal', size=16, labelpad=6) # labelpad é a distancia entre o titulo e os numeros do grafico
-plt.ylabel("Valores do eixo Y", family='serif', color='r', weight='normal', size=16, labelpad=6)
+# Definindo cores
+co0 = "#f0f3f5"     # Preto
+co1 = "#ffffff"      # Branco
+co2 = "6f9fbd"      # Azul
+co3 = "#38576b"     # Valor
+co4 = "403d3d"      # Letra
+co5 = "e06636"      # - profit
+co6 = "6dd695"      # + profit
+fundo = "3f729b" 
 
-plt.show() # Sempre deve ter o .show, caso contrario nao ira apresentar o grafico
+# Criando a janela
+
+janela = Tk()
+janela.title('Trabalhando com gráficos')
+janela.geometry("1190x500")
+janela.resizable(width=FALSE, height=FALSE) # Bloqueando o tamanho da janela
+
+# Dividindo a janela principal em duas partes usando frames
+frame_top = Frame(janela, width=1370, height=45, pady=0, padx=0, bg=co1, relief='flat')
+frame_top.grid(row=0,column=0)
+
+frame_quadro = Frame(janela, width=1370, height=700, pady=15, padx=7, bg=co1, relief='flat')
+frame_quadro.grid(row=1,column=0, sticky=NW)
+
+janela.mainloop()
